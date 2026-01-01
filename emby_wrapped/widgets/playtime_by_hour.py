@@ -44,7 +44,7 @@ class PlaytimeByHourWidget(BaseWidget):
         chart_type = str(chart_cfg.get("type", "bar")).lower()
         color_name = str(chart_cfg.get("color", "accent"))
 
-        _apply_dark_axes(self.ctx)
+        _apply_dark_axes(self.ctx.theme)
         color = _resolve_color(self.ctx, color_name)
 
         hours = report.hour_seconds.index

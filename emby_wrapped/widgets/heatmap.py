@@ -34,7 +34,7 @@ class HeatmapWidget(BaseWidget):
         chart_cfg = self.config.get("chart", {}) if isinstance(self.config.get("chart"), dict) else {}
         cmap = str(chart_cfg.get("cmap", "magma"))
 
-        _apply_dark_axes(self.ctx)
+        _apply_dark_axes(self.ctx.theme)
         hm = report.heatmap.copy() / 3600.0  # # hours
 
         fig, ax = plt.subplots(figsize=(11, 4.8))

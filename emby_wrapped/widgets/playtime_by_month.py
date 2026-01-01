@@ -9,29 +9,32 @@ import matplotlib.pyplot as plt
 from .base import BaseWidget, WidgetResult
 from .registry import register_widget
 
+from ..themes import Theme
 
-def _apply_dark_axes(theme):
+
+def _apply_dark_axes(theme: Theme) -> None:
     bg = tuple(c / 255.0 for c in theme.bg1)
-    plt.rcParams.update({
-        "figure.facecolor": bg,
-        "axes.facecolor": bg,
-        "savefig.facecolor": bg,
-        "text.color": (1, 1, 1, 0.92),
-        "axes.labelcolor": (1, 1, 1, 0.92),
-        "xtick.color": (1, 1, 1, 0.92),
-        "ytick.color": (1, 1, 1, 0.92),
-        "grid.color": (1, 1, 1, 0.14),
-        "axes.edgecolor": (1, 1, 1, 0.25),
-        "font.family": "DejaVu Sans",
-    })
 
+    plt.rcParams.update(
+        {
+            "figure.facecolor": bg,
+            "axes.facecolor": bg,
+            "savefig.facecolor": bg,
+            "text.color": "white",
+            "axes.labelcolor": "white",
+            "xtick.color": "white",
+            "ytick.color": "white",
+            "axes.edgecolor": "white",
+            "grid.color": "white",
+        }
+    )
 
 @register_widget("playtime-by-month")
 class PlaytimeByMonthWidget(BaseWidget):
     key = "playtime-by-month"
 
     def render(self, report, assets) -> WidgetResult:
-        _apply_dark_axes(self.ctx)
+        _apply_dark_axes(self.ctx.theme)
 
         color = tuple(c / 255.0 for c in self.ctx.theme.accent)
         labels = list(report.month_seconds.index)

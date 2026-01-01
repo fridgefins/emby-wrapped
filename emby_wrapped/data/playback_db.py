@@ -146,6 +146,10 @@ def load_playback_df(playback_db: str, year: int, timezone: str) -> pd.DataFrame
 
     df["Hour"] = df["DateCreated"].dt.hour.astype(int)
     df["DayOfWeek"] = df["DateCreated"].dt.day_name()
-    df["Month"] = df["DateCreated"].dt.to_period("M").astype(str)
+    s = df["DateCreated"]
+    # If tz-aware, drop tz explicitly (avoids pandas warning)
+    if getattr(s.dt, "tz", None) is not None:
+        s = s.dt.tz_localize(None)
+    df["Month"] = s.dt.to_period("M").astype(str)
 
     return df

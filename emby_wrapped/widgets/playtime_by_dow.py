@@ -31,7 +31,7 @@ class PlaytimeByDowWidget(BaseWidget):
     key = "playtime-by-dow"
 
     def render(self, report, assets) -> WidgetResult:
-        _apply_dark_axes(self.ctx)
+        _apply_dark_axes(self.ctx.theme)
 
         color = tuple(c / 255.0 for c in self.ctx.theme.accent2)
         labels = list(report.dow_seconds.index)

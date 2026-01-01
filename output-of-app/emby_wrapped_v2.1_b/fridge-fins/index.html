@@ -1,0 +1,222 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Emby Wrapped 2025</title>
+  <style>
+:root{
+  --bg1: rgb(8,10,18);
+  --bg2: rgb(20,10,35);
+  --accent: rgb(0,224,255);
+  --accent2: rgb(255,77,240);
+  --text: rgba(255,255,255,.92);
+  --muted: rgba(255,255,255,.72);
+  --card: rgba(255,255,255,.08);
+  --stroke: rgba(255,255,255,.14);
+  --shadow: rgba(0,0,0,.35);
+}
+html,body{
+  height:100%;
+  margin:0;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(1200px 600px at 15% 10%, rgba(255,255,255,.08), transparent 60%),
+    radial-gradient(900px 500px at 85% 25%, rgba(255,255,255,.06), transparent 55%),
+    linear-gradient(145deg, var(--bg1), var(--bg2));
+}
+.container{ max-width:1120px; margin:0 auto; padding:28px 18px 60px; }
+.hero{
+  padding:22px;
+  border:1px solid var(--stroke);
+  background: linear-gradient(145deg, var(--card), rgba(255,255,255,.04));
+  border-radius:18px;
+  box-shadow:0 18px 40px var(--shadow);
+}
+.heroTop{ display:flex; align-items:flex-end; justify-content:space-between; gap:16px; flex-wrap:wrap; }
+h1{ margin:0; font-size:34px; letter-spacing:-0.02em; }
+.sub{ color:var(--muted); font-size:14px; margin-top:4px; }
+.badge{ display:inline-block; padding:5px 10px; border:1px solid rgba(255,255,255,.16); border-radius:999px; color:var(--muted); font-size:12px; }
+.grid{ display:grid; grid-template-columns:repeat(12,1fr); gap:14px; margin-top:14px; }
+.card{ grid-column: span 6; border-radius:18px; border:1px solid var(--stroke);
+        background: linear-gradient(145deg, var(--card), rgba(0,0,0,.12)); padding:16px; }
+.card.wide{ grid-column: span 12; }
+.card.third{ grid-column: span 4; }
+img.chart{ width:100%; border-radius:14px; border:1px solid rgba(255,255,255,.12); box-shadow:0 12px 30px rgba(0,0,0,.30); }
+table{ width:100%; border-collapse:collapse; }
+td,th{ padding:8px 6px; border-bottom:1px solid rgba(255,255,255,.10); text-align:left; }
+th{ color:var(--muted); font-weight:650; font-size:12px; }
+.mono{ font-variant-numeric: tabular-nums; }
+</style>
+</head>
+<body>
+  <div class="container">
+    <div class="hero">
+      <div class="heroTop">
+        <div>
+          <h1>Emby Wrapped 2025</h1>
+          <div class="sub">for <b>fridge-fins</b> • peak hour: <b>3 PM</b> • peak day: <b>Sunday</b></div>
+        </div>
+        <div class="badge">theme: Neon</div>
+      </div>
+    </div>
+    <div class="grid">
+      
+<div class="card third">
+  <div><div class="sub">Total Playtime</div><div style="font-size:18px;font-weight:800" class="mono">45d 08h 53m 25s</div></div>
+  <div style="margin-top:10px"><div class="sub">Plays</div><div style="font-size:18px;font-weight:800" class="mono">2964</div></div>
+  <div style="margin-top:10px"><div class="sub">Distinct Titles</div><div style="font-size:18px;font-weight:800" class="mono">1256</div></div>
+</div>
+
+
+<div class="card" style="grid-column: span 8;">
+  <div style="display:flex;justify-content:space-between;gap:10px;align-items:baseline;">
+    <div class="sub">Playtime Split</div>
+    <div class="sub">Movies / TV / Live</div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:10px;">
+    <div style="border:1px solid rgba(255,255,255,.10);border-radius:14px;padding:12px;background:linear-gradient(145deg,rgba(255,255,255,.06),rgba(0,0,0,.12));">
+      <div class="sub">Movies</div>
+      <div style="font-weight:850" class="mono">7d 01h 04m 14s</div>
+    </div>
+    <div style="border:1px solid rgba(255,255,255,.10);border-radius:14px;padding:12px;background:linear-gradient(145deg,rgba(255,255,255,.06),rgba(0,0,0,.12));">
+      <div class="sub">TV Shows</div>
+      <div style="font-weight:850" class="mono">29d 12h 18m 00s</div>
+    </div>
+    <div style="border:1px solid rgba(255,255,255,.10);border-radius:14px;padding:12px;background:linear-gradient(145deg,rgba(255,255,255,.06),rgba(0,0,0,.12));">
+      <div class="sub">TV Channels</div>
+      <div style="font-weight:850" class="mono">8d 01h 21m 41s</div>
+    </div>
+  </div>
+
+  <div class="sub" style="margin-top:10px;">Other: <b class="mono">0d 18h 09m 30s</b></div>
+</div>
+
+
+<div class="card">
+  <div class="sub">Watch Time by Month</div>
+  <div style="margin-top:10px;"><img class="chart" src="charts/month.png" alt="month"></div>
+</div>
+
+
+<div class="card">
+  <div class="sub">Watch Time by Hour</div>
+  <div style="margin-top:10px;"><img class="chart" src="charts/hour.png" alt="hour"></div>
+</div>
+
+
+<div class="card">
+  <div class="sub">Watch Time by Day of Week</div>
+  <div style="margin-top:10px;"><img class="chart" src="charts/dow.png" alt="dow"></div>
+</div>
+
+
+<div class="card wide">
+  <div class="sub">Viewing Heatmap</div>
+  <div style="margin-top:10px;"><img class="chart" src="charts/heatmap.png" alt="heatmap"></div>
+</div>
+
+
+<div class="card wide">
+  <div class="sub">Devices & Clients</div>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:10px;">
+    <div>
+      <div class="badge">Devices</div>
+      <table style="margin-top:8px;"><thead><tr><th>Name</th><th class="mono">Time</th></tr></thead><tbody>
+        <tr><td>Matt's 6th Fire TV</td><td class='mono'>12d 09h 01m 06s</td></tr>
+<tr><td>Firefox</td><td class='mono'>10d 04h 19m 11s</td></tr>
+<tr><td>Matt's 2nd Fire TV</td><td class='mono'>7d 23h 18m 49s</td></tr>
+<tr><td>matty-firestick</td><td class='mono'>5d 21h 50m 11s</td></tr>
+<tr><td>Matt's 5th Fire TV</td><td class='mono'>5d 13h 17m 55s</td></tr>
+<tr><td>corner-cottage-cast</td><td class='mono'>1d 13h 31m 16s</td></tr>
+<tr><td>matty-fone</td><td class='mono'>0d 15h 14m 26s</td></tr>
+<tr><td>Apple TV</td><td class='mono'>0d 13h 02m 24s</td></tr>
+<tr><td>iPad</td><td class='mono'>0d 08h 58m 34s</td></tr>
+<tr><td>matty-cast4k</td><td class='mono'>0d 04h 11m 04s</td></tr>
+      </tbody></table>
+    </div>
+    <div>
+      <div class="badge">Clients</div>
+      <table style="margin-top:8px;"><thead><tr><th>Name</th><th class="mono">Time</th></tr></thead><tbody>
+        <tr><td>Emby for Android</td><td class='mono'>33d 15h 18m 50s</td></tr>
+<tr><td>Emby Web</td><td class='mono'>10d 04h 19m 11s</td></tr>
+<tr><td>Emby for iOS</td><td class='mono'>1d 00h 13m 00s</td></tr>
+<tr><td>Emby for Apple TV</td><td class='mono'>0d 13h 02m 24s</td></tr>
+      </tbody></table>
+    </div>
+    <div>
+      <div class="badge">Playback Method</div>
+      <table style="margin-top:8px;"><thead><tr><th>Name</th><th class="mono">Time</th></tr></thead><tbody>
+        <tr><td>DirectStream</td><td class='mono'>33d 10h 05m 19s</td></tr>
+<tr><td>Transcode (v:direct a:direct)</td><td class='mono'>3d 21h 20m 53s</td></tr>
+<tr><td>Transcode (v:direct a:aac)</td><td class='mono'>3d 14h 00m 01s</td></tr>
+<tr><td>Transcode (v:h264 a:direct)</td><td class='mono'>1d 03h 59m 04s</td></tr>
+<tr><td>Transcode (v:hevc a:aac)</td><td class='mono'>0d 21h 24m 38s</td></tr>
+<tr><td>Transcode (v:h264 a:aac)</td><td class='mono'>0d 19h 59m 00s</td></tr>
+<tr><td>Transcode (v:h264 a:ac3)</td><td class='mono'>0d 12h 08m 57s</td></tr>
+<tr><td>Transcode</td><td class='mono'>0d 09h 58m 30s</td></tr>
+<tr><td>Transcode (v:hevc a:direct)</td><td class='mono'>0d 07h 55m 53s</td></tr>
+<tr><td>DirectPlay</td><td class='mono'>0d 05h 49m 36s</td></tr>
+      </tbody></table>
+    </div>
+  </div>
+</div>
+
+
+<div class="card wide">
+  <div class="sub">Top Titles</div>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:10px;">
+    <div>
+      <div class="badge">Movies</div>
+      <table style="margin-top:8px;"><thead><tr><th>Title</th><th class="mono">Time</th></tr></thead><tbody>
+        <tr><td>Halloween</td><td class='mono'>0d 16h 54m 58s</td></tr>
+<tr><td>Unknown Number: The High School Catfish</td><td class='mono'>0d 05h 59m 12s</td></tr>
+<tr><td>Dead Man's Curve</td><td class='mono'>0d 05h 26m 40s</td></tr>
+<tr><td>Halloween Kills</td><td class='mono'>0d 05h 25m 50s</td></tr>
+<tr><td>Urban Legends: Final Cut</td><td class='mono'>0d 04h 43m 31s</td></tr>
+<tr><td>Splitsville</td><td class='mono'>0d 03h 43m 15s</td></tr>
+<tr><td>Happy Gilmore 2</td><td class='mono'>0d 03h 11m 28s</td></tr>
+<tr><td>KT #703 - GABRIEL ＂FLUFFY＂ IGLESIAS</td><td class='mono'>0d 03h 00m 11s</td></tr>
+<tr><td>Halloween Ends</td><td class='mono'>0d 02h 47m 46s</td></tr>
+<tr><td>Fresh</td><td class='mono'>0d 02h 38m 12s</td></tr>
+      </tbody></table>
+    </div>
+    <div>
+      <div class="badge">TV Shows</div>
+      <table style="margin-top:8px;"><thead><tr><th>Title</th><th class="mono">Time</th></tr></thead><tbody>
+        <tr><td>OSW Review</td><td class='mono'>8d 09h 54m 02s</td></tr>
+<tr><td>Buffy the Vampire Slayer</td><td class='mono'>1d 11h 52m 15s</td></tr>
+<tr><td>Degrassi</td><td class='mono'>1d 11h 14m 57s</td></tr>
+<tr><td>Norm Macdonald Live</td><td class='mono'>1d 03h 51m 04s</td></tr>
+<tr><td>Detroiters</td><td class='mono'>0d 20h 00m 34s</td></tr>
+<tr><td>King of the Hill</td><td class='mono'>0d 19h 09m 15s</td></tr>
+<tr><td>The Cheap Seats Australia</td><td class='mono'>0d 15h 21m 27s</td></tr>
+<tr><td>Love Island UK</td><td class='mono'>0d 15h 15m 23s</td></tr>
+<tr><td>Love Is Blind</td><td class='mono'>0d 12h 37m 50s</td></tr>
+<tr><td>Penn &amp; Teller: Fool Us</td><td class='mono'>0d 11h 50m 22s</td></tr>
+      </tbody></table>
+    </div>
+    <div>
+      <div class="badge">TV Channels</div>
+      <table style="margin-top:8px;"><thead><tr><th>Title</th><th class="mono">Time</th></tr></thead><tbody>
+        <tr><td>FOX 32 Chicago WFLD</td><td class='mono'>0d 17h 15m 42s</td></tr>
+<tr><td>ABC 7 WLS</td><td class='mono'>0d 16h 07m 03s</td></tr>
+<tr><td>Marquee Sports Network</td><td class='mono'>0d 15h 26m 09s</td></tr>
+<tr><td>PPV: Royal Rumble</td><td class='mono'>0d 10h 09m 48s</td></tr>
+<tr><td>TBS FHD</td><td class='mono'>0d 08h 58m 23s</td></tr>
+<tr><td>CBS 2 Chicago WBBM</td><td class='mono'>0d 07h 44m 00s</td></tr>
+<tr><td>ESPN</td><td class='mono'>0d 07h 35m 01s</td></tr>
+<tr><td>New York Mets (L)</td><td class='mono'>0d 07h 18m 28s</td></tr>
+<tr><td>Marquee Sports Network FHD</td><td class='mono'>0d 07h 10m 01s</td></tr>
+<tr><td>FS1</td><td class='mono'>0d 06h 47m 56s</td></tr>
+      </tbody></table>
+    </div>
+  </div>
+</div>
+
+    </div>
+  </div>
+</body>
+</html>
