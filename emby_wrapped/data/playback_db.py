@@ -23,7 +23,20 @@ OPTIONAL_COLS = {
     "DeviceName": {"DeviceName", "Device"},
     "ClientName": {"ClientName", "Client"},
     "PlaybackMethod": {"PlaybackMethod", "Method"},
+    "PauseDuration": {"PauseDuration", "PauseDurationSeconds", "PauseSeconds"},
 }
+
+
+def _coerce_seconds(series: pd.Series) -> pd.Series:
+    return pd.to_numeric(series, errors="coerce").fillna(0.0)
+
+
+def _pick_pause_column(df: pd.DataFrame) -> str | None:
+    # # Playback Reporting has used slightly different column names across versions / forks.
+    for col in ("PauseDuration", "PauseDurationSeconds", "PauseSeconds"):
+        if col in df.columns:
+            return col
+    return None
 
 
 def list_tables(conn: sqlite3.Connection) -> List[str]:
@@ -105,6 +118,13 @@ def load_playback_df(playback_db: str, year: int, timezone: str) -> pd.DataFrame
             f"{cmap['item']} AS ItemId",
             f"{cmap['duration']} AS PlayDuration",
         ]
+
+        # Ensure PauseDuration exists as a column in the resulting DataFrame.
+        if "PauseDuration" in cmap:
+            select_cols.append(f"{cmap['PauseDuration']} AS PauseDuration")
+        else:
+            select_cols.append("NULL AS PauseDuration")
+
         for out_name in ["ItemType", "ItemName", "DeviceName", "ClientName", "PlaybackMethod"]:
             if out_name in cmap:
                 select_cols.append(f"{cmap[out_name]} AS {out_name}")
@@ -135,9 +155,25 @@ def load_playback_df(playback_db: str, year: int, timezone: str) -> pd.DataFrame
 
     df["DateCreated"] = ts.dt.tz_convert(timezone)
 
-    # # Duration as seconds
-    df["PlayDuration"] = pd.to_numeric(df["PlayDuration"], errors="coerce").fillna(0.0).astype(float)
-    df["Seconds"] = df["PlayDuration"]
+    # # Effective playtime: PlayDuration - PauseDuration
+    # # PlayDuration in Playback Reporting is "session open" time; subtract PauseDuration
+    # # to approximate actual viewing time.
+
+    # --- after df is loaded from sqlite and has PlayDuration ---
+    play = _coerce_seconds(df["PlayDuration"])
+    
+    # PauseDuration is always present from SQL (NULL if not available in table)
+    pause = _coerce_seconds(df["PauseDuration"]) if "PauseDuration" in df.columns else 0.0
+
+    # # Clamp at 0 in case of bad rows (pause > play) or nulls.
+    df["Seconds"] = (play - pause).clip(lower=0.0)
+    
+    # # Optional: keep these for debugging / future widgets (safe to remove if you don’t want them)
+    df["RawPlaySeconds"] = play
+    df["PauseSeconds"] = pause
+    
+    df["Minutes"] = df["Seconds"] / 60.0
+    df["Hours"] = df["Seconds"] / 3600.0
 
     # # Filter to year AFTER timezone conversion
     start = pd.Timestamp(dt.datetime(year, 1, 1), tz=timezone)
