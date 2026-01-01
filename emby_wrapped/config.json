@@ -1,0 +1,14 @@
+{
+  "server_url": "http://100.121.170.87:8096",
+  "base_path": "/emby",
+  "api_key": "378e357fcf9742fa904c96147f9dd337",
+  "year": 2025,
+  "timezone": "America/Chicago",
+  "playback_db": "./playback_reporting.db",
+  "out_dir": "../emby_wrapped_v2.1_2025",
+  "assets_dir": "./assets",
+  "max_top_titles": 10,
+  "include_posters": true,
+  "poster_max_width": 900,
+  "http_timeout_seconds": 25
+}

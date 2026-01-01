@@ -1,0 +1,17 @@
+{
+  "generator": "html_v1",
+  "theme": { "palette": "auto" },
+  "widgets": [
+    { "key": "overview", "enabled": true },
+    { "key": "playtime-split", "enabled": true },
+
+    { "key": "playtime-by-month", "enabled": true, "chart": { "type": "line", "color": "accent" } },
+    { "key": "playtime-by-hour", "enabled": true, "chart": { "type": "bar", "color": "accent2" } },
+    { "key": "playtime-by-dow", "enabled": true, "chart": { "type": "bar", "color": "accent" } },
+
+    { "key": "heatmap", "enabled": true, "chart": { "cmap": "magma" } },
+    { "key": "devices", "enabled": true, "limit": 10 },
+
+    { "key": "top-titles", "enabled": true, "items-per-type": 10, "posters": true }
+  ]
+}

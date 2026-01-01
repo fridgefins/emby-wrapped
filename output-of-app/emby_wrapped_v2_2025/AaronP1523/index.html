@@ -1,0 +1,277 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Emby Wrapped 2025 — AaronP1523</title>
+  <style>
+:root{
+  --bg1: rgb(8,10,18);
+  --bg2: rgb(20,10,35);
+  --accent: rgb(0,224,255);
+  --accent2: rgb(255,77,240);
+
+  --text: rgba(255,255,255,.92);
+  --muted: rgba(255,255,255,.72);
+  --card: rgba(255,255,255,.08);
+  --card2: rgba(0,0,0,.22);
+  --stroke: rgba(255,255,255,.14);
+  --shadow: rgba(0,0,0,.35);
+}
+
+html,body{
+  height:100%;
+  margin:0;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, "Noto Sans", "Liberation Sans", sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(1200px 600px at 15% 10%, rgba(255,255,255,.08), transparent 60%),
+    radial-gradient(900px 500px at 85% 25%, rgba(255,255,255,.06), transparent 55%),
+    linear-gradient(145deg, var(--bg1), var(--bg2));
+}
+
+.container{
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 28px 18px 60px;
+}
+
+.hero{
+  padding: 22px 22px;
+  border: 1px solid var(--stroke);
+  background: linear-gradient(145deg, var(--card), rgba(255,255,255,.04));
+  border-radius: 18px;
+  box-shadow: 0 18px 40px var(--shadow);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+}
+
+.heroTop{
+  display:flex;
+  align-items:flex-end;
+  justify-content:space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.hero h1{
+  margin: 0;
+  font-size: 34px;
+  letter-spacing: -0.02em;
+}
+
+.sub{
+  color: var(--muted);
+  font-size: 14px;
+  margin-top: 4px;
+}
+
+.badge{
+  display:inline-block;
+  padding: 5px 10px;
+  border: 1px solid rgba(255,255,255,.16);
+  border-radius: 999px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 14px;
+  margin-top: 14px;
+}
+
+.card{
+  grid-column: span 4;
+  border-radius: 18px;
+  border: 1px solid var(--stroke);
+  background: linear-gradient(145deg, var(--card), rgba(0,0,0,.12));
+  padding: 16px 16px;
+}
+
+.card.wide{ grid-column: span 12; }
+.card.half{ grid-column: span 6; }
+
+.kpiRow{
+  display:flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.kpiLabel{ color: var(--muted); font-size: 12px; }
+.kpiValue{ font-size: 18px; font-weight: 750; }
+
+.split3{
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.split3 .mini{
+  border: 1px solid rgba(255,255,255,.10);
+  border-radius: 14px;
+  padding: 12px 12px;
+  background: linear-gradient(145deg, rgba(255,255,255,.06), rgba(0,0,0,.12));
+}
+
+.mini .t{ color: var(--muted); font-size: 12px; margin-bottom: 6px; }
+.mini .v{ font-size: 16px; font-weight: 750; }
+
+.lists3{
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.list{
+  margin: 8px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.list li{
+  display:flex;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(255,255,255,.08);
+}
+
+.list li .title{
+  overflow:hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 65%;
+}
+
+.list li .time{
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+
+img.chart{
+  width: 100%;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,.12);
+  box-shadow: 0 12px 30px rgba(0,0,0,.30);
+}
+
+.poster{
+  width: 100%;
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,.14);
+  box-shadow: 0 16px 40px rgba(0,0,0,.35);
+}
+</style>
+</head>
+<body>
+  <div class="container">
+    <div class="hero">
+      <div class="heroTop">
+        <div>
+          <h1>Emby Wrapped <span style="color:var(--accent)">2025</span></h1>
+          <div class="sub">for <b>AaronP1523</b> • peak hour: <b>2 PM</b> • peak day: <b>Sunday</b></div>
+        </div>
+        <div class="badge">theme: Neon</div>
+      </div>
+
+      <img class="poster" src="data:image/jpeg;base64,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" alt="poster">
+    </div>
+
+    <div class="grid">
+      <div class="card">
+        <div class="kpiRow"><div class="kpiLabel">Total Playtime</div><div class="kpiValue">89d 00h 46m 33s</div></div>
+        <div class="kpiRow"><div class="kpiLabel">Plays</div><div class="kpiValue">5234</div></div>
+        <div class="kpiRow"><div class="kpiLabel">Distinct Titles</div><div class="kpiValue">1468</div></div>
+      </div>
+
+      <div class="card" style="grid-column: span 8;">
+        <div class="kpiRow"><div class="kpiLabel">Playtime Split</div><div class="kpiValue">Movies / TV / Live</div></div>
+        <div class="split3">
+          <div class="mini">
+            <div class="t">Movies</div>
+            <div class="v">21d 23h 25m 32s</div>
+          </div>
+          <div class="mini">
+            <div class="t">TV Shows</div>
+            <div class="v">41d 22h 36m 36s</div>
+          </div>
+          <div class="mini">
+            <div class="t">TV Channels</div>
+            <div class="v">23d 06h 58m 26s</div>
+          </div>
+        </div>
+        <div class="sub" style="margin-top:10px;">Other: <b>1d 19h 45m 59s</b></div>
+      </div>
+
+      <div class="card half">
+        <div class="kpiRow"><div class="kpiLabel">Watch Time by Month</div><div class="kpiValue"></div></div>
+        <img class="chart" src="charts/month.png" alt="month">
+      </div>
+
+      <div class="card half">
+        <div class="kpiRow"><div class="kpiLabel">Watch Time by Hour</div><div class="kpiValue"></div></div>
+        <img class="chart" src="charts/hour.png" alt="hour">
+      </div>
+
+      <div class="card wide">
+        <div class="kpiRow"><div class="kpiLabel">Top Titles</div><div class="kpiValue"></div></div>
+        <div class="lists3">
+          <div>
+            <div class="badge">Movies</div>
+            <ul class="list"><li><span class="title">Wicked: For Good</span><span class="time">0d 09h 32m 38s</span></li>
+<li><span class="title">I Know What You Did Last Summer</span><span class="time">0d 07h 55m 33s</span></li>
+<li><span class="title">How to Train Your Dragon</span><span class="time">0d 07h 39m 49s</span></li>
+<li><span class="title">Mission: Impossible - The Final Reckoning</span><span class="time">0d 07h 39m 14s</span></li>
+<li><span class="title">Doctor Sleep [Directors Cut]</span><span class="time">0d 06h 32m 55s</span></li>
+<li><span class="title">Predator: Badlands</span><span class="time">0d 06h 23m 14s</span></li>
+<li><span class="title">Fantastic Beasts: The Secrets of Dumbledore</span><span class="time">0d 06h 20m 02s</span></li>
+<li><span class="title">Wicked</span><span class="time">0d 06h 18m 12s</span></li>
+<li><span class="title">Five Nights at Freddy's 2</span><span class="time">0d 06h 11m 55s</span></li>
+<li><span class="title">Please Don't Destroy: The Treasure of Foggy Mountain</span><span class="time">0d 05h 15m 01s</span></li></ul>
+          </div>
+          <div>
+            <div class="badge">TV Shows</div>
+            <ul class="list"><li><span class="title">Saturday Night Live</span><span class="time">3d 06h 19m 00s</span></li>
+<li><span class="title">Australian Survivor</span><span class="time">1d 16h 16m 00s</span></li>
+<li><span class="title">Mama June: Family Crisis</span><span class="time">1d 07h 40m 45s</span></li>
+<li><span class="title">Squid Game 3 [오징어 게임]</span><span class="time">1d 07h 05m 14s</span></li>
+<li><span class="title">90 Day Diaries</span><span class="time">1d 06h 27m 57s</span></li>
+<li><span class="title">Stranger Things</span><span class="time">1d 04h 12m 00s</span></li>
+<li><span class="title">Twisted Metal</span><span class="time">0d 23h 02m 03s</span></li>
+<li><span class="title">Love on the Spectrum U.S.</span><span class="time">0d 18h 43m 05s</span></li>
+<li><span class="title">Penn &amp; Teller: Fool Us</span><span class="time">0d 18h 05m 46s</span></li>
+<li><span class="title">Monster: The Ed Gein Story</span><span class="time">0d 17h 34m 01s</span></li></ul>
+          </div>
+          <div>
+            <div class="badge">TV Channels</div>
+            <ul class="list"><li><span class="title">TLC</span><span class="time">7d 12h 52m 54s</span></li>
+<li><span class="title">NBC 5 WMAQ</span><span class="time">2d 08h 06m 01s</span></li>
+<li><span class="title">MTV</span><span class="time">1d 11h 51m 32s</span></li>
+<li><span class="title">TLC FHD</span><span class="time">1d 04h 32m 17s</span></li>
+<li><span class="title">CBS 2 Chicago WBBM</span><span class="time">0d 20h 17m 43s</span></li>
+<li><span class="title">E!</span><span class="time">0d 13h 31m 25s</span></li>
+<li><span class="title">MTV FHD</span><span class="time">0d 12h 11m 01s</span></li>
+<li><span class="title">History</span><span class="time">0d 11h 33m 57s</span></li>
+<li><span class="title">CNBC</span><span class="time">0d 11h 08m 10s</span></li>
+<li><span class="title">FOX 32 Chicago WFLD</span><span class="time">0d 09h 43m 26s</span></li></ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="card wide">
+        <div class="kpiRow"><div class="kpiLabel">Watch Time by Day of Week</div><div class="kpiValue"></div></div>
+        <img class="chart" src="charts/dow.png" alt="dow">
+      </div>
+    </div>
+
+    <div class="sub" style="margin-top:16px; text-align:center;">
+      Generated on 2026-01-01 07:34 AM
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,6 @@
+pandas>=2.2
+requests>=2.32
+matplotlib>=3.8
+
+[rich]
+rich>=13.7
