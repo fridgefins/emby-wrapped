@@ -1,2 +1,0 @@
-[console_scripts]
-emby-wrapped = emby_wrapped.cli:main
